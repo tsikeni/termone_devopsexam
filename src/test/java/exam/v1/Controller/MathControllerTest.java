@@ -1,6 +1,5 @@
 package exam.v1.Controller;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import exam.v1.DTO.DoMathRequestDto;
 import org.junit.jupiter.api.Test;
