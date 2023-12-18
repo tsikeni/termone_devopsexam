@@ -4,7 +4,6 @@ package exam;
 import exam.v1.DTO.DoMathRequestDto;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -18,7 +17,7 @@ public class MathControllerEndToEndTest {
                 .contentType(ContentType.JSON)
                 .body(request)
                 .when()
-                .post("http://localhost:8080/api/math/doMath")
+                .post("http://localhost:8080/api/v1/math")
                 .then()
                 .statusCode(200)
                 .body("calcResponse", equalTo(5.0));
@@ -32,7 +31,7 @@ public class MathControllerEndToEndTest {
                 .contentType(ContentType.JSON)
                 .body(request)
                 .when()
-                .post("http://localhost:8080/api/math/doMath")
+                .post("http://localhost:8080/api/v1/math")
                 .then()
                 .statusCode(200)
                 .body("calcResponse", equalTo(2.0));
@@ -46,7 +45,7 @@ public class MathControllerEndToEndTest {
                 .contentType(ContentType.JSON)
                 .body(request)
                 .when()
-                .post("http://localhost:8080/api/math/doMath")
+                .post("http://localhost:8080/api/v1/math")
                 .then()
                 .statusCode(200)
                 .body("calcResponse", equalTo(6.0));
@@ -60,7 +59,7 @@ public class MathControllerEndToEndTest {
                 .contentType(ContentType.JSON)
                 .body(request)
                 .when()
-                .post("http://localhost:8080/api/math/doMath")
+                .post("http://localhost:8080/api/v1/math")
                 .then()
                 .statusCode(200)
                 .body("calcResponse", equalTo(2.0));

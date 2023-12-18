@@ -9,7 +9,7 @@ import exam.v1.ServiceImpl.MathOperatorImpl;
 
 @RestController
 
-@RequestMapping("api/v1/math")
+@RequestMapping("/api/v1/math")
 public class MathController {
     private final MathOperatorImpl mathOperatorImpl;
 

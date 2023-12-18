@@ -21,7 +21,7 @@ public class MathControllerTest {
     @Test
     public void testDoMath_Addition() {
         DoMathRequestDto request = new DoMathRequestDto(2, 3, "+");
-        ResponseEntity<Map> responseEntity = restTemplate.postForEntity("/api/math/doMath", request, Map.class);
+        ResponseEntity<Map> responseEntity = restTemplate.postForEntity("/api/v1/math", request, Map.class);
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals(5.0, responseEntity.getBody().get("calcResponse"));
     }
@@ -29,7 +29,7 @@ public class MathControllerTest {
     @Test
     public void testDoMath_Subtraction() {
         DoMathRequestDto request = new DoMathRequestDto(5, 3, "-");
-        ResponseEntity<Map> responseEntity = restTemplate.postForEntity("/api/math/doMath", request, Map.class);
+        ResponseEntity<Map> responseEntity = restTemplate.postForEntity("/api/v1/math", request, Map.class);
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals(2.0, responseEntity.getBody().get("calcResponse"));
     }
@@ -37,7 +37,7 @@ public class MathControllerTest {
     @Test
     public void testDoMath_Multiplication() {
         DoMathRequestDto request = new DoMathRequestDto(2, 3, "*");
-        ResponseEntity<Map> responseEntity = restTemplate.postForEntity("/api/math/doMath", request, Map.class);
+        ResponseEntity<Map> responseEntity = restTemplate.postForEntity("/api/v1/math", request, Map.class);
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals(6.0, responseEntity.getBody().get("calcResponse"));
     }
@@ -45,10 +45,9 @@ public class MathControllerTest {
     @Test
     public void testDoMath_Division() {
         DoMathRequestDto request = new DoMathRequestDto(6, 3, "/");
-        ResponseEntity<Map> responseEntity = restTemplate.postForEntity("/api/math/doMath", request, Map.class);
+        ResponseEntity<Map> responseEntity = restTemplate.postForEntity("/api/v1/math", request, Map.class);
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals(2.0, responseEntity.getBody().get("calcResponse"));
     }
 
-    // Add more tests as needed
 }
