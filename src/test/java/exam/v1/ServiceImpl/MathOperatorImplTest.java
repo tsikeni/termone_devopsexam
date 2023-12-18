@@ -2,21 +2,25 @@ package exam.v1.ServiceImpl;
 
 
 import exam.v1.Exceptions.InvalidOperationException;
-import exam.v1.ServiceImpl.MathOperatorImpl;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.Assert.assertEquals;
 
 
 //unit testing
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class MathOperatorImplTest {
 
     @InjectMocks
     private MathOperatorImpl mathOperator;
 
+        @BeforeEach
+       public void setUp() {
+        this.mathOperator = new MathOperatorImpl();
+    }
     @Test
     public void testDoMath_Addition() throws InvalidOperationException {
         double result = mathOperator.doMath(2, 3, "+");
