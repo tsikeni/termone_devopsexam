@@ -1,12 +1,15 @@
 package exam.v1.DTO;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 
 @Getter
 @Setter
 @AllArgsConstructor
-@Tostring
+@ToString
 public class DoMathRequestDto {
     private double operand1;
     private double operand2;
